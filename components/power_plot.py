@@ -56,10 +56,13 @@ class PowerPlot:
 
             time = pd.Timestamp.now()
 
-            # append the new data to csv file
-            with open(self.data_file, "a", newline="", encoding="utf-8") as file:
-                writer = csv.writer(file)
-                writer.writerow([time, power])
+            try:
+                # append the new data to csv file
+                with open(self.data_file, "a", newline="", encoding="utf-8") as file:
+                    writer = csv.writer(file)
+                    writer.writerow([time, power])
+            except:
+                print("Could not write to file")
 
     def refresh_plot(self):
         self.data = pd.read_csv(self.data_file)
