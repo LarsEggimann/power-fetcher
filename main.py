@@ -7,15 +7,19 @@ from components import PowerPlot
 
 pp = PowerPlot()
 
-@ui.page("/main")
-async def main():
+@ui.page("/")
+async def home():
     create_layout()
     pp.create_ui()
+
+@ui.page("/main")
+async def redir():
+    ui.navigate.to("/")
 
 
 if __name__ in {"__main__", "__mp_main__"}:
 
-    ui.navigate.to("/main")
+    ui.navigate.to("/")
 
     ui.run(
         reload=True,
@@ -23,6 +27,7 @@ if __name__ in {"__main__", "__mp_main__"}:
         on_air=None,
         host="0.0.0.0",
         title="Kommune Power Consumption",
-        favicon=str(Path(__file__).parent / "static" / "icon.ico"),
+        favicon=str(Path(__file__).parent / "static" / "icon.svg"),
         port=50051,
+        storage_secret='crazy_secret'
     )

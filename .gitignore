@@ -1,5 +1,6 @@
 # custom
 **/deploy_to_pi5one.sh
+.nicegui
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

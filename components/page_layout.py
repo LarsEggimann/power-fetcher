@@ -15,7 +15,7 @@ def create_layout():
 
         ui.separator()
 
-        ui.link("Main", "/main")
+        ui.link("Home", "/")
 
 
     with ui.right_drawer(value=False).props("bordered width=450") as right_drawer:
@@ -25,7 +25,7 @@ def create_layout():
     with ui.header(elevated=False).classes("flex justify-between"):
         ui.button(on_click=left_drawer.toggle, icon="menu").props("flat color=white")
         
-        with ui.link(target="/main").tooltip("Go Home!"):
+        with ui.link(target="/").tooltip("Go Home!"):
             ui.button(text="Kommune Power Consumption").props("flat color=white").classes("text-xl")
 
         ui.button(on_click=right_drawer.toggle, icon="settings").props(
