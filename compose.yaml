@@ -1,0 +1,7 @@
+services:
+  server:
+    container_name: power_plot_app
+    build:
+      context: .
+    ports:
+      - 50051:50051
