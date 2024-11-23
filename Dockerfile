@@ -41,8 +41,8 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 # Switch to the non-privileged user to run the application.
 # USER appuser
 
-# Copy the source code into the container.
-COPY . .
+# Copy the source code into the container. -> no longer needed as the folder is mounted
+# COPY . .
 
 # Expose the port that the application listens on.
 EXPOSE 50051

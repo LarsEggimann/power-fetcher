@@ -5,3 +5,7 @@ services:
       context: .
     ports:
       - 50051:50051
+    volumes:
+      - .:/app
+    environment:
+      - TZ=Europe/Berlin
